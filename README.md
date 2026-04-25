@@ -1,1 +1,1 @@
-file:///C:/Users/nando/Downloads/auth_system_flow.svg
+![Logo](auth_system_flow.svg)
