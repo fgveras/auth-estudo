@@ -1,0 +1,25 @@
+# Build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docview
+
+# Configurações sensíveis
+appsettings.Development.json
+appsettings.Production.json
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+packages/
+
+# OS
+.DS_Store
+Thumbs.db
