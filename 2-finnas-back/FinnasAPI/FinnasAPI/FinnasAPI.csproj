@@ -13,4 +13,10 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="InfraAuthWS">
+      <HintPath>..\..\..\..\CommonBin\Debug\net10.0\InfraAuthWS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
