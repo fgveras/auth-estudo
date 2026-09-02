@@ -5,8 +5,7 @@ namespace FinnasAPI.Models
     [DataContract]
     public class GastoModel
     {
-
-        [DataMember]        
+        
 
     }
 }

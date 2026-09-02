@@ -1,3 +1,7 @@
 <Solution>
+  <Folder Name="/Infra/">
+    <Project Path="../../../Infra/InfraAuthWS/InfraAuthWS/InfraAuthWS.csproj" />
+  </Folder>
+  <Project Path="../FinnasDbService/FinnasDbService/FinnasDbService.csproj" />
   <Project Path="FinnasAPI/FinnasAPI.csproj" />
 </Solution>

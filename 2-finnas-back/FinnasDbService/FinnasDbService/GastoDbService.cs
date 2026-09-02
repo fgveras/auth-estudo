@@ -110,7 +110,7 @@ namespace FinnasDbService
 
         public GastoRecord Get()
         {
-            return null;
+            return new GastoRecord();
         }
 
         public void Delete()
