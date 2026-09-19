@@ -1,8 +1,8 @@
 ﻿using FinnasDbService;
+using FinnasLogicService;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using System.Net.WebSockets;
-using System.Text.Json;
 
 namespace FinnasAPI.Controllers 
 {
@@ -97,6 +97,30 @@ namespace FinnasAPI.Controllers
             }
 
             return Ok(HttpStatusCode.Accepted);
+        }
+
+        [HttpGet("get-credores-combobox")]
+        public IActionResult GetCredoresCombobox()
+        {
+            var service = new GastosLogicService();
+
+            var ret = new List<CredoresRecord>();
+
+            try
+            {
+                ret = service.GetCredoresCombobox();
+            }
+            catch (WebSocketException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return Ok(ret);
+
         }
     }
 }

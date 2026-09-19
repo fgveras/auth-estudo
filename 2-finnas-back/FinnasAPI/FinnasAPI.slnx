@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="../../../Infra/InfraDAL/InfraDbService/InfraDbService.csproj" />
   <Project Path="../FinnasDbService/FinnasDbService/FinnasDbService.csproj" />
+  <Project Path="../FinnasLogicService/FinnasLogicService/FinnasLogicService.csproj" />
   <Project Path="FinnasAPI/FinnasAPI.csproj" />
 </Solution>

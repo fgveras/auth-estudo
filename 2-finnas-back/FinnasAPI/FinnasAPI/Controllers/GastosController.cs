@@ -1,5 +1,4 @@
-﻿using FinnasAPI.Services;
-using FinnasDbService;
+﻿using FinnasDbService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

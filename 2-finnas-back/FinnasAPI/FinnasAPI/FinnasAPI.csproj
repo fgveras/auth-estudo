@@ -14,9 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="FinnasDbService">
-      <HintPath>..\..\FinnasDbService\FinnasDbService\bin\Debug\net10.0\FinnasDbService.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\..\..\Infra\InfraDAL\InfraDbService\InfraDbService.csproj" />
+    <ProjectReference Include="..\..\FinnasDbService\FinnasDbService\FinnasDbService.csproj" />
+    <ProjectReference Include="..\..\FinnasLogicService\FinnasLogicService\FinnasLogicService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="InfraAuthWS">
       <HintPath>..\..\..\..\Infra\InfraAuthWS\InfraAuthWS\bin\Debug\net10.0\InfraAuthWS.dll</HintPath>
     </Reference>
