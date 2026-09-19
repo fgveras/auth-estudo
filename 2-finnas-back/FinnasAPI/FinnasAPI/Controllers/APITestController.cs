@@ -30,22 +30,11 @@ namespace FinnasAPI.Controllers
         }
 
         [HttpGet("UpdateCredor")]
-        public IActionResult UpdateCredor()
+        public IActionResult UpdateCredor([FromBody] CredoresRecord record)
         {
             var service = new CredoresDbService();
 
-            int outParam = service.CreateOrUpdate(new CredoresRecord
-            {
-                Id = 8,
-                IsActive = true,
-                NomeCredor = "Teste Update Backend",
-                IsPessoaFisica = false,
-                IsRecorrente = false,
-                IsInstFin = false,
-                CodigoInstFin = null,
-                DhCriacao = DateTime.Now,
-                DhAtualizacao = DateTime.Now
-            });
+            int outParam = service.CreateOrUpdate(record);
 
             return Ok(outParam);
         }
@@ -60,6 +49,16 @@ namespace FinnasAPI.Controllers
             var teste = JsonSerializer.Serialize(record);
 
             return Ok(teste);
+        }
+
+        [HttpGet("DeleteCredor")]
+        public IActionResult DeleteCredor([FromQuery] int id)
+        {
+            var service = new CredoresDbService();
+
+            service.Delete(id);            
+
+            return Ok();
         }
     }
 }

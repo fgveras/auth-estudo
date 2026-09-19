@@ -111,10 +111,14 @@ namespace FinnasDbService
 		{
 			this._command = $@"DELETE FROM {this._table} WHERE Id = @Id";
 
-			using(SqlConnection cnn = new SqlConnection(this._connectionString))
+
+            using (SqlConnection cnn = new SqlConnection(this._connectionString))
 			using(SqlCommand cmd = new SqlCommand(this._command, cnn))
 			{
-
+				cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+				
+				cnn.Open();
+				cmd.ExecuteNonQuery();
 			}
 		}
 
@@ -137,7 +141,7 @@ namespace FinnasDbService
 					, @IsPessoaFisica
 					, @IsRecorrente
 					, @IsInstFin
-					, @CodigoInstFin
+					, @CodigoInstFin						
 					, @DhCriacao
 					, @DhAtualizacao
 				)
@@ -154,8 +158,8 @@ namespace FinnasDbService
 					command.Parameters.Add("@IsRecorrente", SqlDbType.Bit).Value = record.IsRecorrente;
 					command.Parameters.Add("@IsInstFin", SqlDbType.Bit).Value = record.IsInstFin;
 					command.Parameters.Add("@CodigoInstFin", SqlDbType.NVarChar, 50).Value = record.CodigoInstFin;
-					command.Parameters.Add("@DhCriacao", SqlDbType.DateTime2).Value = record.DhCriacao;
-					command.Parameters.Add("@DhAtualizacao", SqlDbType.DateTime2).Value = record.DhAtualizacao;
+					command.Parameters.Add("@DhCriacao", SqlDbType.DateTime).Value = DateTime.Now;
+					command.Parameters.Add("@DhAtualizacao", SqlDbType.DateTime).Value = DateTime.Now;
 				
                     connection.Open();
                     object result = command.ExecuteScalar();                    
@@ -183,8 +187,7 @@ namespace FinnasDbService
 					, IsPessoaFisica =  @IsPessoaFisica
 					, IsRecorrente =  @IsRecorrente
 					, IsInstFin =  @IsInstFin
-					, CodigoInstFin = @CodigoInstFin
-					, DhCriacao =  @DhCriacao
+					, CodigoInstFin = @CodigoInstFin					
 					, DhAtualizacao =  @DhAtualizacao
 				WHERE
 					Id = @Id";
@@ -200,9 +203,8 @@ namespace FinnasDbService
 					command.Parameters.Add("@IsPessoaFisica", SqlDbType.Bit).Value = record.IsPessoaFisica;
 					command.Parameters.Add("@IsRecorrente", SqlDbType.Bit).Value = record.IsRecorrente;
 					command.Parameters.Add("@IsInstFin", SqlDbType.Bit).Value = record.IsInstFin;
-					command.Parameters.Add("@CodigoInstFin", SqlDbType.NVarChar, 50).Value = record.CodigoInstFin;
-					command.Parameters.Add("@DhCriacao", SqlDbType.DateTime2).Value = record.DhCriacao;
-					command.Parameters.Add("@DhAtualizacao", SqlDbType.DateTime2).Value = record.DhAtualizacao;
+					command.Parameters.Add("@CodigoInstFin", SqlDbType.NVarChar, 50).Value = record.CodigoInstFin;					
+					command.Parameters.Add("@DhAtualizacao", SqlDbType.DateTime2).Value = DateTime.Now;
 
                     connection.Open();
                     command.ExecuteNonQuery();
