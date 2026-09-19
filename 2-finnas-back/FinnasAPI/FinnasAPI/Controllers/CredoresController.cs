@@ -96,7 +96,7 @@ namespace FinnasAPI.Controllers
                 throw;
             }
 
-            return Ok(HttpStatusCode.NoContent);
+            return Ok(HttpStatusCode.Accepted);
         }
     }
 }
