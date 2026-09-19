@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -7,15 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BCrypt.Net-Next" Version="4.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.7" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.1" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="FinnasDbService">
+      <HintPath>..\..\FinnasDbService\FinnasDbService\bin\Debug\net10.0\FinnasDbService.dll</HintPath>
+    </Reference>
     <Reference Include="InfraAuthWS">
-      <HintPath>..\..\..\..\CommonBin\Debug\net10.0\InfraAuthWS.dll</HintPath>
+      <HintPath>..\..\..\..\Infra\InfraAuthWS\InfraAuthWS\bin\Debug\net10.0\InfraAuthWS.dll</HintPath>
     </Reference>
   </ItemGroup>
 
